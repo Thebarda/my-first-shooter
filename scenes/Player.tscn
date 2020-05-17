@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Pivot.gd" type="Script" id=2]
+[ext_resource path="res://assets/player/player_idle_0.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/player_idle_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/player_walking_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/player_walking_1.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 33.6453 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 15.6346, -58.1177 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 6 )
+shape = SubResource( 1 )
+
+[node name="JustAiredTimer" type="Timer" parent="."]
+
+[node name="Pivot" type="Position2D" parent="."]
+position = Vector2( 0, -70 )
+script = ExtResource( 2 )
+
+[node name="CameraOffset" type="Position2D" parent="Pivot"]
+position = Vector2( 200, 0 )
+
+[node name="Camera" type="Camera2D" parent="Pivot/CameraOffset"]
+current = true
+process_mode = 0
+smoothing_enabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 3, 3 )
+frames = SubResource( 2 )
+animation = "idle"
+playing = true

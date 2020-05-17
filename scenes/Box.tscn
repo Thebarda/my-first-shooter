@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Box.gd" type="Script" id=1]
+[ext_resource path="res://assets/platform.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20.1292, 19.4349 )
+
+[node name="Box" type="RigidBody2D"]
+mass = 2.14286
+gravity_scale = 10.49
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.43394, 0.358477 )
+scale = Vector2( 0.193231, 1.93394 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.43394, 0 )
+shape = SubResource( 1 )

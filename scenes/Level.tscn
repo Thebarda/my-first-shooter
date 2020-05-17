@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/completeFloor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/completeSlope.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/dirtSlope.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/dirt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/Platform.tscn" type="PackedScene" id=6]
+
+[node name="Level" type="Node2D"]
+
+[node name="floors" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="completeFloor" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 80, 470 )
+
+[node name="completeFloor2" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( -220, 470 )
+
+[node name="completeFloor3" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( -70, 470 )
+
+[node name="completeFloor4" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( -70, 470 )
+
+[node name="completeFloor5" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( -70, 470 )
+
+[node name="completeFloor6" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 230, 470 )
+
+[node name="completeFloor7" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 620, 380 )
+
+[node name="completeFloor8" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 470, 380 )
+
+[node name="completeFloor9" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 920, 417 )
+
+[node name="completeFloor10" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 770, 417 )
+
+[node name="completeFloor11" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 1130, 360 )
+
+[node name="completeFloor12" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 1310, 330 )
+
+[node name="completeFloor13" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 1460, 210 )
+
+[node name="completeFloor14" parent="floors" instance=ExtResource( 1 )]
+position = Vector2( 1922.86, 126.533 )
+
+[node name="slopes" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="completeSlope" parent="slopes" instance=ExtResource( 2 )]
+position = Vector2( 320, 432.5 )
+
+[node name="completeSlope2" parent="slopes" instance=ExtResource( 2 )]
+position = Vector2( 380, 372.5 )
+
+[node name="completeSlope3" parent="slopes" instance=ExtResource( 2 )]
+position = Vector2( 350, 402.5 )
+
+[node name="completeSlope4" parent="slopes" instance=ExtResource( 2 )]
+position = Vector2( 1220, 322.5 )
+
+[node name="completeSlope5" parent="slopes" instance=ExtResource( 2 )]
+position = Vector2( 1040, 350 )
+
+[node name="completeSlope6" parent="slopes" instance=ExtResource( 2 )]
+position = Vector2( 1010, 379.086 )
+
+[node name="dirtSlopes" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="dirtSlope" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 320, 550 )
+
+[node name="dirtSlope2" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 380, 492.5 )
+
+[node name="dirtSlope3" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 320, 610 )
+
+[node name="dirtSlope4" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 350, 522.5 )
+
+[node name="dirtSlope5" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 380, 552.5 )
+
+[node name="dirtSlope6" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 350, 582.5 )
+
+[node name="dirtSlope7" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 1010, 560 )
+
+[node name="dirtSlope8" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 1040, 470 )
+
+[node name="dirtSlope9" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 1010, 500 )
+
+[node name="dirtSlope10" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 1040, 527.142 )
+
+[node name="dirtSlope11" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 1220, 500 )
+
+[node name="dirtSlope12" parent="dirtSlopes" instance=ExtResource( 3 )]
+position = Vector2( 1220, 440 )
+
+[node name="dirts" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="dirt" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 607.202, 582.826 )
+
+[node name="dirt2" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 620, 550 )
+
+[node name="dirt3" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 470, 550 )
+
+[node name="dirt4" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 1311.51, 500 )
+
+[node name="dirt6" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 1460, 380 )
+
+[node name="dirt7" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 1460.28, 469.086 )
+
+[node name="dirt5" parent="dirts" instance=ExtResource( 4 )]
+position = Vector2( 1130.28, 530 )
+
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="Box" parent="boxes" instance=ExtResource( 5 )]
+position = Vector2( 834.038, 359.388 )
+
+[node name="Box2" parent="boxes" instance=ExtResource( 5 )]
+position = Vector2( 835.206, 220.729 )
+
+[node name="Box3" parent="boxes" instance=ExtResource( 5 )]
+position = Vector2( 834.038, 270 )
+
+[node name="Box4" parent="boxes" instance=ExtResource( 5 )]
+position = Vector2( 834.038, 320 )
+
+[node name="Platform" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1490.97, -25.8471 )
+rotation = 1.5708
