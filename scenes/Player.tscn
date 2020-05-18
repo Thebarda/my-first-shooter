@@ -1,30 +1,39 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Pivot.gd" type="Script" id=2]
-[ext_resource path="res://assets/player/player_idle_0.png" type="Texture" id=3]
-[ext_resource path="res://assets/player/player_idle_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/player/player_walking_0.png" type="Texture" id=5]
-[ext_resource path="res://assets/player/player_walking_1.png" type="Texture" id=6]
+[ext_resource path="res://scenes/Node2D.gd" type="Script" id=3]
+[ext_resource path="res://assets/player/arm.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/player_idle_0.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/player_idle_1.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/player_walking_0.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/player_walking_1.png" type="Texture" id=8]
+[ext_resource path="res://scenes/Position2D.gd" type="Script" id=9]
+[ext_resource path="res://assets/player/weapon.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 33.6453 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "shoot",
+"speed": 5.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 15.6346, -58.1177 )
+position = Vector2( 8.43009, -57.2875 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -37,6 +46,7 @@ shape = SubResource( 1 )
 [node name="JustAiredTimer" type="Timer" parent="."]
 
 [node name="Pivot" type="Position2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, -70 )
 script = ExtResource( 2 )
 
@@ -48,8 +58,31 @@ current = true
 process_mode = 0
 smoothing_enabled = true
 
+[node name="arm" type="Node2D" parent="."]
+editor/display_folded = true
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="arm"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+offset = Vector2( 3, 0 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 3, 3 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "shoot"
 playing = true
+
+[node name="WeaponPivot" type="Position2D" parent="."]
+script = ExtResource( 9 )
+
+[node name="PositionWeapon" type="Position2D" parent="WeaponPivot"]
+position = Vector2( 18, 0 )
+
+[node name="Weapon" type="Sprite" parent="WeaponPivot/PositionWeapon"]
+scale = Vector2( 3, 3 )
+texture = ExtResource( 10 )
+
+[node name="BulletOut" type="Position2D" parent="WeaponPivot"]
+position = Vector2( 40, -4 )
+[connection signal="rotate_player" from="arm" to="." method="_on_arm_rotate_player"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Bullet.gd" type="Script" id=1]
+[ext_resource path="res://assets/player/bullet.png" type="Texture" id=2]
+
+[node name="Bullet" type="RigidBody2D"]
+mass = 1.45204
+gravity_scale = 2.0
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 4, 2.6 )
+polygon = PoolVector2Array( -1.47041, -0.63687, 0.653569, -0.66519, 1.44652, -0.0138354, 0.61109, 0.651678, -1.48457, 0.665838 )
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
