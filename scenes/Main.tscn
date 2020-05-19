@@ -18,25 +18,45 @@ script = ExtResource( 1 )
 position = Vector2( 59.0981, 343.549 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 89.9448, 303.727 )
+position = Vector2( 329.473, 8502.13 )
 
 [node name="Boxes" type="Node2D" parent="."]
-editor/display_folded = true
-
-[node name="Box" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 1010.61, 440.358 )
 
 [node name="Box3" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 1250.88, 32.1352 )
-
-[node name="Box2" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 1010.61, 398.369 )
+position = Vector2( 851.572, 7899.36 )
 
 [node name="Box4" parent="Boxes" instance=ExtResource( 4 )]
-position = Vector2( 1252.04, -6.35471 )
-scale = Vector2( 0.999996, 1 )
+position = Vector2( 1669.92, 7232.43 )
+
+[node name="Box5" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 4633.27, 10653.6 )
+
+[node name="Box6" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1916.04, 7170 )
+
+[node name="Box7" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1960, 7213.45 )
+
+[node name="Box8" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1975.84, 7254.86 )
+
+[node name="Box9" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1910.76, 7213.45 )
+
+[node name="Box10" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1890, 7254.86 )
+
+[node name="Box11" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1933.93, 7254.86 )
+
+[node name="Box12" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1937.27, 7130 )
+
+[node name="Box13" parent="Boxes" instance=ExtResource( 4 )]
+position = Vector2( 1957.95, 7170 )
 
 [node name="Area2D" type="StaticBody2D" parent="."]
+position = Vector2( 176.862, 8082.35 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -9.28537, 240.646 )

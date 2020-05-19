@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 enum {IDLE, WALK}
 
-const MAX_WALK_SPEED = 400.0
-const GRAVITY = 40.0
-const jump_force = 900.0
+const MAX_WALK_SPEED = 300.0
+const GRAVITY = 20.0
+const jump_force = 600.0
 
 var look_direction = Vector2(1, 0)
 var velocity = Vector2.ZERO
@@ -12,6 +12,7 @@ var state
 var inertia = 100
 var can_fire = true
 var is_shooting = false
+var is_jumping = false
 var shoot_timer
 var rate_of_fire = 0.4
 enum {LEFT, RIGHT}
@@ -44,7 +45,6 @@ func start(start_position):
 	position = 	start_position
 
 func rotate_player():
-	print(player_arm_orientation)
 	if player_arm_orientation == LEFT:
 		$AnimatedSprite.flip_h = true
 	elif player_arm_orientation == RIGHT:
@@ -55,8 +55,12 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 	
 	shoot()
+	
+	if is_on_floor():
+		is_jumping = false
 
 	if is_on_floor() and Input.is_action_pressed("jump"):
+		is_jumping = true
 		velocity.y -= jump_force
 		
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI / 4, false)
