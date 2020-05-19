@@ -12,7 +12,6 @@ var state
 var inertia = 100
 var can_fire = true
 var is_shooting = false
-var is_jumping = false
 var shoot_timer
 var rate_of_fire = 0.4
 enum {LEFT, RIGHT}
@@ -55,12 +54,8 @@ func _physics_process(delta):
 	velocity.y += GRAVITY
 	
 	shoot()
-	
-	if is_on_floor():
-		is_jumping = false
 
 	if is_on_floor() and Input.is_action_pressed("jump"):
-		is_jumping = true
 		velocity.y -= jump_force
 		
 	velocity = move_and_slide(velocity, Vector2.UP, false, 4, PI / 4, false)

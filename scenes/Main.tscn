@@ -18,7 +18,7 @@ script = ExtResource( 1 )
 position = Vector2( 59.0981, 343.549 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 329.473, 8502.13 )
+position = Vector2( 1660.1, 8302.54 )
 
 [node name="Boxes" type="Node2D" parent="."]
 

@@ -46,7 +46,6 @@ shape = SubResource( 1 )
 [node name="JustAiredTimer" type="Timer" parent="."]
 
 [node name="Pivot" type="Position2D" parent="."]
-editor/display_folded = true
 position = Vector2( 0, -70 )
 script = ExtResource( 2 )
 
