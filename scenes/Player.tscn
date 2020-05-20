@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/Pivot.gd" type="Script" id=2]
@@ -32,8 +32,11 @@ animations = [ {
 "speed": 7.0
 } ]
 
+[sub_resource type="OccluderPolygon2D" id=3]
+polygon = PoolVector2Array( 7.58489, -24.1661, -5.93735, -24.1661, -8.72764, -20.3026, -8.51301, -16.0098, -6.36662, -14.9366, -6.36662, -5.92176, -14.7375, 4.3809, -14.5229, 14.4689, -8.08372, 15.9714, -8.51299, 37.2206, 5.22389, 37.6499, 4.7946, 6.74192, 7.15564, -16.8684 )
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 7.35462, -51.9102 )
+position = Vector2( 1.55938, -62.4275 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -49,12 +52,18 @@ shape = SubResource( 1 )
 script = ExtResource( 2 )
 
 [node name="CameraOffset" type="Position2D" parent="Pivot"]
-position = Vector2( 200, -80 )
+position = Vector2( 200, 0 )
 
 [node name="Camera" type="Camera2D" parent="Pivot/CameraOffset"]
 current = true
+zoom = Vector2( 1.2, 1.2 )
 process_mode = 0
 smoothing_enabled = true
+smoothing_speed = 4.5
+drag_margin_left = 0.05
+drag_margin_top = 0.05
+drag_margin_right = 0.05
+drag_margin_bottom = 0.05
 
 [node name="arm" type="Node2D" parent="."]
 editor/display_folded = true
@@ -83,4 +92,7 @@ texture = ExtResource( 10 )
 
 [node name="BulletOut" type="Position2D" parent="WeaponPivot"]
 position = Vector2( 40, -4 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 3 )
 [connection signal="rotate_player" from="arm" to="." method="_on_arm_rotate_player"]
