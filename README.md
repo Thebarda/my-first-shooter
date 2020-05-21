@@ -1,6 +1,6 @@
 # my-first-shooter
 
-In an apocalypse worl, you're Alec. A survivor who trying to go to Green Community, a place where "apparently" every one is accepted and provides security and food. Survive in this dangerous world, fight zombies and... maybe find the peace.
+In an apocalypse world, you're Alec. A survivor who trying to go to Green Community, a place where "apparently" every one is accepted and provides security and food. Survive in this dangerous world, fight zombies and... maybe find the peace.
 
 This platform game is a shooter in an apocalpse universe. I didn't find a name for the moment so I named it "my first shooter" by default...
 
